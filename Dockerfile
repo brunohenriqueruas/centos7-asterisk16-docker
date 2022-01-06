@@ -10,11 +10,11 @@ RUN yum -y install make gcc gcc-c++ make subversion libxml2-devel ncurses-devel 
 RUN yum install bzip2 -y
 RUN mkdir -p ~/src/asterisk/
 RUN cd /root/src/asterisk/
-RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16.17.0.tar.gz
-RUN tar -xzvf asterisk-16.17.0.tar.gz
-RUN /bin/sh asterisk-16.17.0/contrib/scripts/install_prereq install
+RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16.23.0.tar.gz
+RUN tar -xzvf asterisk-16.23.0.tar.gz
+RUN /bin/sh asterisk-16.23.0/contrib/scripts/install_prereq install
 #RUN /bin/sh asterisk-16.17.0/contrib/scripts/install_prereq install-unpackaged
-WORKDIR asterisk-16.17.0
+WORKDIR asterisk-16.23.0
 #RUN /bin/sh configure --with-pjproject-bundled --with-jansson-bundled
 RUN /bin/sh configure --libdir=/usr/lib64 --with-jansson-bundled
 RUN make
